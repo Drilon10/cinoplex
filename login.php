@@ -6,9 +6,9 @@
 
         <h1 class="text-center">Login</h1>
 
-        <input type="text" placeholder="Username" class="form-control mb-3" name="username" required>
+        <input type="text" placeholder="Username" class="form-control mb-3" name="username">
 
-        <input type="password" placeholder="Password" class="form-control mb-3" name="password" required>
+        <input type="password" placeholder="Password" class="form-control mb-3" name="password">
 
         <button type="submit" name="submit" class="btn btn-danger mb-3 w-100">Login</button> <br>
 

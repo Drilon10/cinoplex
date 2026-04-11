@@ -14,12 +14,12 @@
         $cPassword = password_hash($tempCPass, PASSWORD_DEFAULT);
 
         if(empty($name) || empty($email) || empty($username) || empty($password) || empty($cPassword)) {
-            echo "Please fill all the fields!";
+            $_SESSION['toast'] = ['type' => 'danger', 'message' => "Please fill all the fields!"];
         }
 
         else {
             if($tempPass != $tempCPass) {
-                echo "Passwords does not match!";
+                $_SESSION['toast'] = ['type' => 'danger', 'message' => "Passwords does not match!"];
                 return;
             }
 
@@ -35,7 +35,7 @@
 
                 $insertData->execute();
 
-                echo "User added successfully";
+                $_SESSION['toast'] = ['type' => 'success', 'message' => "Register Successful!"];
                 header("Location: login.php");
             }
         }

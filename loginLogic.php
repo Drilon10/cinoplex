@@ -6,8 +6,9 @@
         $password = $_POST['password'];
 
         if(empty($username) || empty($password)) {
-            echo "Please fill all the fields!";
-            header("refresh:2; url=login.php");
+            $_SESSION['toast'] = ['type' => 'danger', 'message' => "Please fill all the fields!"];
+            header("Location: login.php");
+            exit;
         }
 
         else {
@@ -21,17 +22,22 @@
                 $data = $insertData->fetch();
                 if(password_verify($password, $data['password'])) {
                     $_SESSION['username'] = $data['username'];
+                    $_SESSION['toast'] = ['type' => 'success', 'message' => "Login Successful!"];
                     header("Location: dashboard.php");
+                    exit;
                 }
 
                 else {
-                    echo "Password is incorrect!";
-                    header("refresh:2; url=login.php");
+                    $_SESSION['toast'] = ['type' => 'danger', 'message' => "Incorrect Password!"];
+                    header("Location: login.php");
+                    exit;
                 }
             }
 
             else {
-                echo "User not found!";
+                $_SESSION['toast'] = ['type' => 'danger', 'message' => "User not found!"];
+                header("Location: login.php");
+                exit;
             }
         }
     }
