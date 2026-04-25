@@ -1,7 +1,7 @@
 <?php
     include_once('config.php');
 
-    if(empty($_SESSION['username'])){
+    if(empty($_SESSION['username']) || $_SESSION['is_admin'] != 'true'){
         header("Location: login.html");
     }
 
