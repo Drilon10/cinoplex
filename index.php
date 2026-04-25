@@ -21,7 +21,7 @@
     <title>CinoPlex</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="bg-dark">
     
   <nav class="navbar fixed-top p-2 shadow bg-light">
         <a href="dashboard.php" class="navbar-brand">
@@ -34,7 +34,7 @@
         </ul>
     </nav>
 
-    <div class="container g-0">
+    <div class="container g-0 mt-5">
         <div class="row">
             <div class="col">
                 <h1 class="text-white text-center my-5">Movies</h1>
@@ -43,8 +43,8 @@
         <div class="row g-3 mb-5">
             <?php foreach($movies_data as $movie_data) { ?>
             <div class="col-12 col-lg-4">
-                <div class="card bg-dark text-center border border-white">
-                    <img src="img/<?php echo $movie_data['m_image'];?>" alt="Image"
+                <div class="card bg-dark text-center border border-danger shadow">
+                    <img src="img/<?php echo $movie_data['m_image'];?>" class="rounded rounded-3" alt="Image"
                      class="w-100" height="300px">
                      <h2 class="text-white"><?php echo $movie_data['m_name'];?></h2>
                      <p class="text-white"><?php echo $movie_data['m_desc'];?></p>
