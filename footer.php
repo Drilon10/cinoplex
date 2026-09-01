@@ -1,5 +1,5 @@
 <?php if(isset($_SESSION['toast'])): ?>
-<div class="toast-container position-fixed bottom-0 p-3" style="z-index: 9999; right: 36%; translateX(50px)">
+<div class="toast-container position-fixed bottom-0 p-3" style="z-index: 9999; right: 36%; transform: translateX(50px);">
   <div class="toast align-items-center text-bg-<?= htmlspecialchars($_SESSION['toast']['type']) ?> border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body">

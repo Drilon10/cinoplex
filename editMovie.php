@@ -65,7 +65,7 @@
                                 <input type="text" name="m_rating" value="<?= $movies["m_rating"] ?>" class="form-control mb-3" placeholder="Movie Rating">
 
                                 <label class="form-label"></label>
-                                <input type="file" name="m_image" value="img/<?= $movies["m_image"]?> class="form-control mb-3">
+                                <input type="file" name="m_image" value="img/<?= $movies["m_image"]?>" class="form-control mb-3">
 
                                 <?php if(!empty($movies['m_image'])): ?>
                                     <p class="text-muted">Current: <?= $movies["m_image"]?></p>
